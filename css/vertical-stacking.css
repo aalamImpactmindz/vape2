@@ -1,0 +1,13 @@
+/* all z-index here */
+
+.badge-container {
+  z-index: 1;
+}
+
+header {
+  z-index: 2;
+}
+
+.scroll-to-top {
+  z-index: 3;
+}
