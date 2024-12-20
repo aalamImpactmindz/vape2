@@ -172,58 +172,14 @@
           <a href="#" class="link-main">View All<i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-          <div v-for="menu in 12" :key="menu" class="col">
+          <div v-for="category in categories" :key="category.id" class="col">
             <a href="#" class="category-container">
               <div class="category-image">
-                <img src="./assets/images/category-1.webp" alt="" />
+                <img :src="category.image" alt="" />
               </div>
               <div class="category-text">
-                <h3>{{menu}}</h3>
-                <p>{{menu}} Items</p>
-              </div>
-            </a>
-          </div>
-          <div class="col">
-            <a href="#" class="category-container">
-              <div class="category-image">
-                <img src="./assets/images/category-1.webp" alt="" />
-              </div>
-              <div class="category-text">
-                <h3>DISPOSABLE VAPES</h3>
-                <p>45 Items</p>
-              </div>
-            </a>
-          </div>
-          <div class="col">
-            <a href="#" class="category-container">
-              <div class="category-image">
-                <img src="./assets/images/category-2.webp" alt="" />
-              </div>
-              <div class="category-text">
-                <h3>NIC Salts</h3>
-                <p>45 Items</p>
-              </div>
-            </a>
-          </div>
-          <div class="col">
-            <a href="#" class="category-container">
-              <div class="category-image">
-                <img src="./assets/images/category-3.webp" alt="" />
-              </div>
-              <div class="category-text">
-                <h3>Vape Kits</h3>
-                <p>45 Items</p>
-              </div>
-            </a>
-          </div>
-          <div class="col">
-            <a href="#" class="category-container">
-              <div class="category-image">
-                <img src="./assets/images/category-4.webp" alt="" />
-              </div>
-              <div class="category-text">
-                <h3>Pods</h3>
-                <p>45 Items</p>
+                <h3>{{category.name}}</h3>
+                <p>{{category.stock}} Items</p>
               </div>
             </a>
           </div>
@@ -1083,11 +1039,11 @@
       data: {
         message: 'Hello, Vue.js v2!',
         pros: [],
-        menus: [
-          { id: 1, menu_name: "menu1", img:'./assets/images/category-1.webp'},
-          { id: 2, menu_name: "menu2", img:'./assets/images/category-2.webp' },
-          { id: 3, menu_name: "menu3" , img:'./assets/images/category-3.webp'},
-          { id: 4, menu_name: "menu4", img:'./assets/images/category-4.webp' },
+        categories: [
+          { id: 1, name:"disposable vapes", image:'./assets/images/category-1.webp', stock: "45"},
+          { id: 1, name:"nic salts", image:'./assets/images/category-2.webp', stock: "8"},
+          { id: 1, name:"vape kits", image:'./assets/images/category-3.webp', stock: "26"},
+          { id: 1, name:"pods", image:'./assets/images/category-4.webp', stock: "53"}
         ]
       },
       created() {
