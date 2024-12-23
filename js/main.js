@@ -54,6 +54,28 @@ document.addEventListener("DOMContentLoaded", () => {
     keyboardControl: false,
     simulateTouch: false,
     allowTouchMove: false,
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      // when window width is >= 576px
+      576: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
+      // when window width is >= 992px
+      992: {
+        slidesPerView: 4,
+        spaceBetween: 20
+      },
+      // when window width is >= 1200px
+      1200: {
+        slidesPerView: 6,
+        spaceBetween: 20
+      }
+    }
   });
   // SWIPER BRANDS
 
@@ -68,7 +90,30 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollbar: {
       el: ".swiper-scrollbar",
       hide: false,
+      draggable: true,
     },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: false
+      },
+      // when window width is >= 576px
+      576: {
+        slidesPerView: 2,
+        spaceBetween: false
+      },
+      // when window width is >= 992px
+      992: {
+        slidesPerView: 3,
+        spaceBetween: false
+      },
+      // when window width is >= 2000px
+      2000: {
+        slidesPerView: 5,
+        spaceBetween: false
+      }
+    }
   });
   // SWIPER REVIEWS
 
@@ -76,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector("header");
   let scrollTopValue = window.scrollY;
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 200) {
+    if (window.scrollY > 200 && window.innerWidth > 1199) {
       if (scrollTopValue < window.scrollY) {
         header.classList.remove("shown");
       } else {
@@ -94,11 +139,34 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollbar: {
       el: ".swiper-scrollbar",
       hide: false,
+      draggable: true,
     },
     autoplay: {
       delay: 4000,
       disableOnInteraction: false,
     },
+    breakpoints: {
+      // when window width is >= 320px
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+      // when window width is >= 576px
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+      // when window width is >= 992px
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
+      // when window width is >= 1200px
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 20
+      }
+    }
   });
   // SWIPER PRODUCTS
 
@@ -115,4 +183,18 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo(0, 0)
   })
   // SCROLL TO TOP
+
+  // MOBILE NAV
+  const navOpener = document.querySelector(".nav-opener");
+  const navCloser = document.querySelector(".nav-closer");
+  const navMobile = document.querySelector(".nav-mobile");
+  navOpener.addEventListener("click", () => {
+    navMobile.classList.add("shown");
+    document.body.classList.add("navbar-shown");
+  })
+  navCloser.addEventListener("click", () => {
+    navMobile.classList.remove("shown");
+    document.body.classList.remove("navbar-shown");
+  })
+  // MOBILE NAV
 });

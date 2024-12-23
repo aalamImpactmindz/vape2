@@ -281,7 +281,7 @@ p {
 }
 
 .container {
-  max-width: calc(100% - 200px);
+  max-width: calc(100% - 160px);
 }
 
 .h-t-right ul {
@@ -311,10 +311,6 @@ header.shown {
   transform: none;
 }
 
-.navbar-collapse {
-  flex: 0 0 auto;
-}
-
 .nav-link {
   padding: 0 !important;
   color: var(--color-text);
@@ -324,7 +320,7 @@ header.shown {
 
 .navbar-nav {
   gap: 30px;
-  height: 100%;
+  flex-direction: row;
 }
 
 .nav-link.active {
@@ -354,6 +350,7 @@ nav.navbar {
   margin-top: 0 !important;
   border-radius: 0;
   border-color: var(--color-border);
+  position: absolute !important;
 }
 
 .navbar-brand {
@@ -461,6 +458,7 @@ nav.navbar {
   height: 38vw;
   object-fit: cover;
   width: 100%;
+  min-height: 500px;
 }
 
 .swiper-pagination-bullet {
@@ -478,19 +476,25 @@ nav.navbar {
 
 .hero .swiper-button-prev,
 .hero .swiper-button-next {
-  width: 200px;
+  width: 10vw;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), transparent);
   height: 100%;
   top: 0;
   left: 0;
   opacity: 0;
   margin: 0;
+  min-width: 60px;
 }
 
 .hero .swiper-button-next {
   background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
   left: auto;
   right: 0;
+}
+
+.hero .swiper-button-prev::after,
+.hero .swiper-button-next::after {
+  font-size: 30px;
 }
 
 .hero:hover .swiper-button-prev,
@@ -551,6 +555,8 @@ nav.navbar {
   border-radius: 20px;
   display: block;
   transition: var(--transition);
+  border: 1px solid var(--color-primary);
+  height: 100%;
 }
 
 .category-image {
@@ -560,6 +566,8 @@ nav.navbar {
 .category-image img {
   border-radius: 10px;
   transition: var(--transition);
+  width: 100%;
+  object-fit: cover;
 }
 
 .category-text h3 {
@@ -587,7 +595,7 @@ nav.navbar {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 100px;
+  padding-left: 80px;
   padding-right: 2vw;
 }
 
@@ -628,13 +636,14 @@ button.btn.btn-main {
   position: absolute;
   left: auto;
   right: 5px;
-  width: 140px;
+  width: 100px;
   top: 5px;
+  padding: 10px !important;
 }
 
 .newsletter input {
   height: 56px;
-  padding-right: 150px;
+  padding-right: 110px;
   border: 1px solid var(--color-secondary);
   background-color: transparent;
   border-radius: 100px;
@@ -647,7 +656,7 @@ button.btn.btn-main {
 .swiper-brands a {
   background-color: var(--color-light);
   display: flex;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 10px 30px;
   height: 100%;
   flex-wrap: wrap;
@@ -715,6 +724,11 @@ button.btn.btn-main {
 
 .swiper-reviews .swiper-slide p {
   opacity: 0.8;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .swiper-reviews .swiper-slide h6 {
@@ -779,19 +793,24 @@ button.btn.btn-main {
 
 .features .container {
   background-color: var(--color-light);
-  border-radius: 30px;
+  border-radius: 20px;
   border: 1px dashed #888;
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
+section.features {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
 .features-container {
-  padding: 20px;
+  padding: 10px;
 }
 
 .features-icon {
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border: 1px solid #888;
   border-radius: 100px;
   display: flex;
@@ -801,12 +820,12 @@ button.btn.btn-main {
 }
 
 .features-icon i {
-  font-size: 24px;
+  font-size: 20px;
   color: var(--color-secondary);
 }
 
 .features-text {
-  width: calc(100% - 60px);
+  width: calc(100% - 50px);
   padding-left: 15px;
 }
 
@@ -832,9 +851,10 @@ button.btn.btn-main {
 .product-container {
   background-color: var(--color-light);
   overflow: hidden;
-  padding: 15px;
-  border: 1px solid var(--color-primary);
+  padding: 20px;
   position: relative;
+  border-radius: 20px;
+  height: 100%;
 }
 
 .product-image img {
@@ -851,6 +871,10 @@ button.btn.btn-main {
   color: var(--color-secondary);
   font-weight: bold;
   margin: 6px 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .product-text h4 {
@@ -873,15 +897,15 @@ button.btn.btn-main {
 
 .badge-container {
   position: absolute;
-  left: 15px;
-  top: 15px;
+  left: 20px;
+  top: 20px;
 }
 
 .badge-container .badge {
   background-color: var(--color-primary);
   padding: 10px;
   line-height: 1;
-  border-radius: 0;
+  border-radius: 4px;
 }
 
 .badge-container .badge::before {
@@ -1059,6 +1083,114 @@ button.btn.btn-main {
 
 .scroll-to-top.shown {
   display: flex;
+}
+
+.faq-image img {
+  border-radius: 20px;
+}
+
+.h-t-center h5 {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.products .swiper-slide {
+  height: auto;
+}
+
+.features-text p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hdr-top .row {
+  align-items: center;
+}
+
+.top-categories .row {
+  row-gap: 1.5rem;
+}
+
+.ftr-links-wrap {
+  row-gap: 30px;
+}
+
+.nav-opener {
+  margin-left: 5px;
+  cursor: pointer;
+  display: none;
+}
+
+.nav-closer {
+  cursor: pointer;
+}
+
+.nav-mobile {
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: auto;
+  right: 0;
+  background-color: var(--color-light);
+  height: 100svh;
+  overflow: auto;
+  padding: 15px;
+  box-shadow: var(--box-shadow);
+  transform: translateX(105%);
+  transition: var(--transition);
+}
+
+.nav-mobile.shown {
+  transform: none;
+}
+
+body.navbar-shown::before {
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 4;
+}
+
+.nav-mobile ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nav-mobile .accordion-body {
+  font-size: 14px;
+  margin-top: 0 !important;
+  padding: 10px 10px 0;
+}
+
+.nav-mobile>ul {
+  margin-top: 15px;
+}
+
+.nav-mobile .accordion-button {
+  color: var(--color-text) !important;
+  text-transform: uppercase;
+}
+
+.nav-mobile .accordion-button:hover,
+.nav-mobile .accordion-button:active {
+  color: var(--color-dark) !important;
+}
+
+.nav-closer {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.product-grid {
+  row-gap: 1.5rem;
 }
 
 @keyframes shine {

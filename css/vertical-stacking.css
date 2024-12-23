@@ -11,3 +11,7 @@ header {
 .scroll-to-top {
   z-index: 3;
 }
+
+.nav-mobile {
+  z-index: 5;
+}

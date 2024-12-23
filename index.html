@@ -60,28 +60,57 @@
     <div class="scroll-to-top">
       <i class="fa-solid fa-angle-up"></i>
     </div>
+    <div class="nav-mobile">
+      <div class="nav-closer"><img src="./assets/images/x.svg" alt="" /></div>
+      <ul>
+        <li><a href="#" class="nav-link active">Home</a></li>
+        <li><a href="#" class="nav-link">Box of 10</a></li>
+        <li>
+          <div class="accordion" id="accordionSubMenu">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                  data-bs-target="#subMenuOne" aria-controls="subMenuOne">
+                  Dropdown
+                </button>
+              </h2>
+              <div id="subMenuOne" class="accordion-collapse collapse" data-bs-parent="#accordionSubMenu">
+                <div class="accordion-body">
+                  <ul>
+                    <li><a href="#" class="nav-link">Action</a></li>
+                    <li><a href="#" class="nav-link">Another action</a></li>
+                    <li><a href="#" class="nav-link">Something else here</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="#" class="nav-link">Clearance</a></li>
+      </ul>
+    </div>
     <header class="shown">
       <div class="hdr-top">
         <div class="container">
           <div class="row">
-            <div class="col-md-3">
+            <div class="col-xl-4 col-6">
               <div class="h-t-left d-flex flex-wrap">
                 <a href="mailto:example@gmail.com">
-                  <i class="fa-solid fa-envelope"></i>example@gmail.com
+                  <i class="fa-solid fa-envelope"></i><span>example@gmail.com</span>
                 </a>
                 <a href="tel:9876543210">
-                  <i class="fa-solid fa-phone"></i>9876543210
+                  <i class="fa-solid fa-phone"></i><span>9876543210</span>
                 </a>
               </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-xl-4 d-none d-xl-block">
               <div class="h-t-center text-center">
                 <h5>FREE SHIPPING AVAILABLE ON ORDER ABOVE £25</h5>
               </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-xl-4 col-6">
               <div class="h-t-right d-flex flex-wrap">
-                Follow Us:
+                <span>Follow Us:</span>
                 <ul class="d-flex flex-wrap">
                   <li><a href="https://www.facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
                   <li><a href="https://x.com/" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
@@ -95,39 +124,32 @@
         </div>
       </div>
       <div class="hdr-bottom">
-        <nav class="navbar navbar-expand-lg">
+        <nav class="navbar">
           <div class="container justify-content-between">
             <a class="navbar-brand" href="#"><img src="./assets/images/logo.avif" alt="" /></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <span class="badge text-bg-danger">Popular</span>
-                  <a class="nav-link" href="#">Box of 10</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Dropdown
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Action</a></li>
-                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                  </ul>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Clearance</a>
-                </li>
-              </ul>
-            </div>
+            <ul class="navbar-nav d-none d-xl-flex">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <span class="badge text-bg-danger">Popular</span>
+                <a class="nav-link" href="#">Box of 10</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Clearance</a>
+              </li>
+            </ul>
             <div class="hdr-right d-flex flex-wrap align-items-center">
               <form class="d-flex flex-wrap align-items-center" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -136,6 +158,7 @@
               <a href="#"><i class="fa-regular fa-user"></i></a>
               <a href="#"><i class="fa-regular fa-heart"></i><span class="badge text-bg-danger">4</span></a>
               <a href="#"><i class="fa-solid fa-bag-shopping"></i><span class="badge text-bg-danger">54</span></a>
+              <div class="nav-opener"><img src="./assets/images/menu.svg" alt="" /></div>
             </div>
           </div>
         </nav>
@@ -171,8 +194,8 @@
           <h2>Browse Top Categories</h2>
           <a href="#" class="link-main">View All<i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
-          <div v-for="category in categories" :key="category.id" class="col">
+        <div class="row">
+          <div v-for="category in categories" :key="category.id" class="col-lg-3 col-sm-6">
             <a href="#" class="category-container">
               <div class="category-image">
                 <img :src="category.image" alt="" />
@@ -357,143 +380,159 @@
           <h2>Trending Now</h2>
           <a href="#" class="link-main">View All<i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
-        <div class="swiper swiper-products">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="product-container">
-                <div class="badge-container">
-                  <span class="badge">Any 3 For £20</span>
-                </div>
-                <div class="product-image">
-                  <img src="./assets/images/product.webp" alt="" />
-                </div>
-                <div class="product-text">
-                  <h4>IVG</h4>
-                  <h3>IVG SMART 5500 Puffs Disposable Vape Device</h3>
-                  <p class="price"><del>£11.99</del><ins>£8.99</ins></p>
-                  <div class="p-t-ftr d-flex flex-wrap align-items-center justify-content-between">
-                    <a href="#" class="btn btn-main">Shop Now</a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                </div>
+        <div class="row product-grid">
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="product-container">
+              <div class="badge-container">
+                <span class="badge">Any 3 For £20</span>
               </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-container">
-                <div class="badge-container">
-                  <span class="badge">Any 3 For £20</span>
-                </div>
-                <div class="product-image">
-                  <img src="./assets/images/product.webp" alt="" />
-                </div>
-                <div class="product-text">
-                  <h4>IVG</h4>
-                  <h3>IVG SMART 5500 Puffs Disposable Vape Device</h3>
-                  <p class="price"><del>£11.99</del><ins>£8.99</ins></p>
-                  <div class="p-t-ftr d-flex flex-wrap align-items-center justify-content-between">
-                    <a href="#" class="btn btn-main">Shop Now</a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                </div>
+              <div class="product-image">
+                <img src="./assets/images/product.webp" alt="" />
               </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-container">
-                <div class="badge-container">
-                  <span class="badge">Any 3 For £20</span>
-                </div>
-                <div class="product-image">
-                  <img src="./assets/images/product.webp" alt="" />
-                </div>
-                <div class="product-text">
-                  <h4>IVG</h4>
-                  <h3>IVG SMART 5500 Puffs Disposable Vape Device</h3>
-                  <p class="price"><del>£11.99</del><ins>£8.99</ins></p>
-                  <div class="p-t-ftr d-flex flex-wrap align-items-center justify-content-between">
-                    <a href="#" class="btn btn-main">Shop Now</a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-container">
-                <div class="badge-container">
-                  <span class="badge">Any 3 For £20</span>
-                </div>
-                <div class="product-image">
-                  <img src="./assets/images/product.webp" alt="" />
-                </div>
-                <div class="product-text">
-                  <h4>IVG</h4>
-                  <h3>IVG SMART 5500 Puffs Disposable Vape Device</h3>
-                  <p class="price"><del>£11.99</del><ins>£8.99</ins></p>
-                  <div class="p-t-ftr d-flex flex-wrap align-items-center justify-content-between">
-                    <a href="#" class="btn btn-main">Shop Now</a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-container">
-                <div class="badge-container">
-                  <span class="badge">Any 3 For £20</span>
-                </div>
-                <div class="product-image">
-                  <img src="./assets/images/product.webp" alt="" />
-                </div>
-                <div class="product-text">
-                  <h4>IVG</h4>
-                  <h3>IVG SMART 5500 Puffs Disposable Vape Device</h3>
-                  <p class="price"><del>£11.99</del><ins>£8.99</ins></p>
-                  <div class="p-t-ftr d-flex flex-wrap align-items-center justify-content-between">
-                    <a href="#" class="btn btn-main">Shop Now</a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-container">
-                <div class="badge-container">
-                  <span class="badge">Any 3 For £20</span>
-                </div>
-                <div class="product-image">
-                  <img src="./assets/images/product.webp" alt="" />
-                </div>
-                <div class="product-text">
-                  <h4>IVG</h4>
-                  <h3>IVG SMART 5500 Puffs Disposable Vape Device</h3>
-                  <p class="price"><del>£11.99</del><ins>£8.99</ins></p>
-                  <div class="p-t-ftr d-flex flex-wrap align-items-center justify-content-between">
-                    <a href="#" class="btn btn-main">Shop Now</a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="product-container">
-                <div class="badge-container">
-                  <span class="badge">Any 3 For £20</span>
-                </div>
-                <div class="product-image">
-                  <img src="./assets/images/product.webp" alt="" />
-                </div>
-                <div class="product-text">
-                  <h4>IVG</h4>
-                  <h3>IVG SMART 5500 Puffs Disposable Vape Device</h3>
-                  <p class="price"><del>£11.99</del><ins>£8.99</ins></p>
-                  <div class="p-t-ftr d-flex flex-wrap align-items-center justify-content-between">
-                    <a href="#" class="btn btn-main">Shop Now</a>
-                    <i class="fa-regular fa-heart"></i>
-                  </div>
+              <div class="product-text">
+                <h4>IVG</h4>
+                <h3>IVG SMART 5500 Puffs Disposable Vape Device</h3>
+                <p class="price"><del>£11.99</del><ins>£8.99</ins></p>
+                <div class="p-t-ftr d-flex flex-wrap align-items-center justify-content-between">
+                  <a href="#" class="btn btn-main">Shop Now</a>
+                  <i class="fa-regular fa-heart"></i>
                 </div>
               </div>
             </div>
           </div>
-          <div class="swiper-scrollbar"></div>
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="product-container">
+              <div class="badge-container">
+                <span class="badge">Any 3 For £20</span>
+              </div>
+              <div class="product-image">
+                <img src="./assets/images/product.webp" alt="" />
+              </div>
+              <div class="product-text">
+                <h4>IVG</h4>
+                <h3>IVG SMART 5500 Puffs Disposable Vape Device</h3>
+                <p class="price"><del>£11.99</del><ins>£8.99</ins></p>
+                <div class="p-t-ftr d-flex flex-wrap align-items-center justify-content-between">
+                  <a href="#" class="btn btn-main">Shop Now</a>
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="product-container">
+              <div class="badge-container">
+                <span class="badge">Any 3 For £20</span>
+              </div>
+              <div class="product-image">
+                <img src="./assets/images/product.webp" alt="" />
+              </div>
+              <div class="product-text">
+                <h4>IVG</h4>
+                <h3>IVG SMART 5500 Puffs Disposable Vape Device</h3>
+                <p class="price"><del>£11.99</del><ins>£8.99</ins></p>
+                <div class="p-t-ftr d-flex flex-wrap align-items-center justify-content-between">
+                  <a href="#" class="btn btn-main">Shop Now</a>
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="product-container">
+              <div class="badge-container">
+                <span class="badge">Any 3 For £20</span>
+              </div>
+              <div class="product-image">
+                <img src="./assets/images/product.webp" alt="" />
+              </div>
+              <div class="product-text">
+                <h4>IVG</h4>
+                <h3>IVG SMART 5500 Puffs Disposable Vape Device</h3>
+                <p class="price"><del>£11.99</del><ins>£8.99</ins></p>
+                <div class="p-t-ftr d-flex flex-wrap align-items-center justify-content-between">
+                  <a href="#" class="btn btn-main">Shop Now</a>
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="product-container">
+              <div class="badge-container">
+                <span class="badge">Any 3 For £20</span>
+              </div>
+              <div class="product-image">
+                <img src="./assets/images/product.webp" alt="" />
+              </div>
+              <div class="product-text">
+                <h4>IVG</h4>
+                <h3>IVG SMART 5500 Puffs Disposable Vape Device</h3>
+                <p class="price"><del>£11.99</del><ins>£8.99</ins></p>
+                <div class="p-t-ftr d-flex flex-wrap align-items-center justify-content-between">
+                  <a href="#" class="btn btn-main">Shop Now</a>
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="product-container">
+              <div class="badge-container">
+                <span class="badge">Any 3 For £20</span>
+              </div>
+              <div class="product-image">
+                <img src="./assets/images/product.webp" alt="" />
+              </div>
+              <div class="product-text">
+                <h4>IVG</h4>
+                <h3>IVG SMART 5500 Puffs Disposable Vape Device</h3>
+                <p class="price"><del>£11.99</del><ins>£8.99</ins></p>
+                <div class="p-t-ftr d-flex flex-wrap align-items-center justify-content-between">
+                  <a href="#" class="btn btn-main">Shop Now</a>
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="product-container">
+              <div class="badge-container">
+                <span class="badge">Any 3 For £20</span>
+              </div>
+              <div class="product-image">
+                <img src="./assets/images/product.webp" alt="" />
+              </div>
+              <div class="product-text">
+                <h4>IVG</h4>
+                <h3>IVG SMART 5500 Puffs Disposable Vape Device</h3>
+                <p class="price"><del>£11.99</del><ins>£8.99</ins></p>
+                <div class="p-t-ftr d-flex flex-wrap align-items-center justify-content-between">
+                  <a href="#" class="btn btn-main">Shop Now</a>
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-sm-6">
+            <div class="product-container">
+              <div class="badge-container">
+                <span class="badge">Any 3 For £20</span>
+              </div>
+              <div class="product-image">
+                <img src="./assets/images/product.webp" alt="" />
+              </div>
+              <div class="product-text">
+                <h4>IVG</h4>
+                <h3>IVG SMART 5500 Puffs Disposable Vape Device</h3>
+                <p class="price"><del>£11.99</del><ins>£8.99</ins></p>
+                <div class="p-t-ftr d-flex flex-wrap align-items-center justify-content-between">
+                  <a href="#" class="btn btn-main">Shop Now</a>
+                  <i class="fa-regular fa-heart"></i>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -646,7 +685,7 @@
     <section class="features sec-padding-small">
       <div class="container">
         <div class="row">
-          <div class="col-md-3">
+          <div class="col-xl-3 col-md-6">
             <div class="features-container d-flex flex-wrap">
               <div class="features-icon">
                 <i class="fa-solid fa-truck-fast"></i>
@@ -657,7 +696,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-xl-3 col-md-6">
             <div class="features-container d-flex flex-wrap">
               <div class="features-icon">
                 <i class="fa-solid fa-microphone"></i>
@@ -668,7 +707,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-xl-3 col-md-6">
             <div class="features-container d-flex flex-wrap">
               <div class="features-icon">
                 <i class="fa-regular fa-handshake"></i>
@@ -679,7 +718,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-xl-3 col-md-6">
             <div class="features-container d-flex flex-wrap">
               <div class="features-icon">
                 <i class="fa-solid fa-sack-dollar"></i>
@@ -1040,10 +1079,10 @@
         message: 'Hello, Vue.js v2!',
         pros: [],
         categories: [
-          { id: 1, name:"disposable vapes", image:'./assets/images/category-1.webp', stock: "45"},
-          { id: 1, name:"nic salts", image:'./assets/images/category-2.webp', stock: "8"},
-          { id: 1, name:"vape kits", image:'./assets/images/category-3.webp', stock: "26"},
-          { id: 1, name:"pods", image:'./assets/images/category-4.webp', stock: "53"}
+          { id: 1, name: "disposable vapes", image: './assets/images/category-1.webp', stock: "45" },
+          { id: 2, name: "nic salts", image: './assets/images/category-2.webp', stock: "8" },
+          { id: 3, name: "vape kits", image: './assets/images/category-3.webp', stock: "26" },
+          { id: 4, name: "pods", image: './assets/images/category-4.webp', stock: "53" }
         ]
       },
       created() {
