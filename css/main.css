@@ -389,7 +389,7 @@ nav.navbar {
   background-color: #dc3545 !important;
 }
 
-.hdr-right form input {
+header form input.form-control {
   width: 300px;
   margin-right: 0 !important;
   border-radius: 0;
@@ -403,7 +403,7 @@ nav.navbar {
   color: var(--color-secondary);
 }
 
-.hdr-right form .btn-main {
+header form .btn-main {
   width: 40px;
   height: 40px;
 }
@@ -1192,6 +1192,16 @@ body.navbar-shown::before {
 
 .product-grid {
   row-gap: 1.5rem;
+}
+
+.hdr-bottom {
+  padding: 0 20px 10px 20px;
+  display: none;
+}
+
+header .hdr-bottom form input.form-control {
+  width: calc(100% - 40px);
+  max-width: 500px;
 }
 
 @keyframes shine {
