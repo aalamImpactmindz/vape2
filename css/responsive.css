@@ -186,4 +186,8 @@
         flex-direction: column;
         gap: 10px;
     }
+
+    .accordion-body {
+        padding: 0;
+    }
 }
