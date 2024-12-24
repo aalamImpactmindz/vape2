@@ -42,14 +42,17 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
     rel="stylesheet">
-
-  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="css/main.css" />
   <link rel="stylesheet" href="css/responsive.css" />
 </head>
@@ -201,7 +204,8 @@
           <a href="#" class="link-main">View All<i class="fa-solid fa-arrow-right-long"></i></a>
         </div>
         <div class="row">
-          <div v-for="category in categories" :key="category.id" class="col-lg-3 col-sm-6">
+          <div v-for="(category, index) in categories" :key="category.id" class="col-lg-3 col-sm-6" data-aos="fade-up"
+            :data-aos-delay="(200 * (index + 1))" data-aos-anchor-placement="center-bottom">
             <a href="#" class="category-container">
               <div class="category-image">
                 <img :src="category.image" alt="" />
@@ -215,7 +219,7 @@
         </div>
       </div>
     </section>
-    <div class="products sec-red sec-padding">
+    <section class="products sec-red sec-padding">
       <div class="container">
         <div class="sec-heading">
           <h2>New Arrivals</h2>
@@ -360,7 +364,7 @@
           <div class="swiper-scrollbar"></div>
         </div>
       </div>
-    </div>
+    </section>
     <section class="brands sec-padding-small sec-dark">
       <div class="container">
         <div class="sec-heading">
@@ -380,7 +384,7 @@
         </div>
       </div>
     </section>
-    <div class="products sec-padding">
+    <section class="products sec-padding">
       <div class="container">
         <div class="sec-heading">
           <h2>Trending Now</h2>
@@ -541,8 +545,8 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="products sec-red sec-padding">
+    </section>
+    <section class="products sec-red sec-padding">
       <div class="container">
         <div class="sec-heading">
           <h2>Bundle Deals</h2>
@@ -687,51 +691,19 @@
           <div class="swiper-scrollbar"></div>
         </div>
       </div>
-    </div>
+    </section>
     <section class="features sec-padding-small">
       <div class="container">
         <div class="row">
-          <div class="col-xl-3 col-md-6">
+          <div v-for="(feature, index) in features" :key="feature.id" class="col-xl-3 col-md-6" data-aos="fade"
+            :data-aos-delay="200 * (index + 1)" data-aos-anchor-placement="bottom-bottom">
             <div class="features-container d-flex flex-wrap">
               <div class="features-icon">
-                <i class="fa-solid fa-truck-fast"></i>
+                <i :class="feature.icon"></i>
               </div>
               <div class="features-text">
-                <h4>Free Shipping</h4>
-                <p>You get your items delivered without any extra cost.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6">
-            <div class="features-container d-flex flex-wrap">
-              <div class="features-icon">
-                <i class="fa-solid fa-microphone"></i>
-              </div>
-              <div class="features-text">
-                <h4>Great Support 24/7</h4>
-                <p>Our customer support team is available around the clock</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6">
-            <div class="features-container d-flex flex-wrap">
-              <div class="features-icon">
-                <i class="fa-regular fa-handshake"></i>
-              </div>
-              <div class="features-text">
-                <h4>Return Available</h4>
-                <p>Making it easy to return any items if you're not satisfied.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-md-6">
-            <div class="features-container d-flex flex-wrap">
-              <div class="features-icon">
-                <i class="fa-solid fa-sack-dollar"></i>
-              </div>
-              <div class="features-text">
-                <h4>Secure Payment</h4>
-                <p>Shop with confidence knowing that our secure payment</p>
+                <h4>{{ feature.name }}</h4>
+                <p>{{ feature.description }}</p>
               </div>
             </div>
           </div>
@@ -854,12 +826,12 @@
         </div>
         <div class="faqs-wrap">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-right" data-aos-anchor-placement="center-bottom">
               <div class="faq-image">
                 <img src="./assets/images/faq.jpg" alt="" />
               </div>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-8" data-aos="fade-left" data-aos-anchor-placement="center-bottom">
               <div class="accordion" id="accordionFaqs">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
@@ -980,10 +952,12 @@
         <div class="row">
           <div class="col-md-6">
             <div class="newsletter-text">
-              <h3><span class="text-red">Sign Up</span> & Get <br />All Our Latest Deals.</h3>
-              <p>Sign up for our newsletter and we'll keep you updated on all our great deals on your favourite vaping
+              <h3 data-aos="fade-up" data-aos-anchor-placement="center-bottom"><span class="text-red">Sign Up</span> &
+                Get <br />All Our Latest Deals.</h3>
+              <p data-aos="fade-up" data-aos-delay="200" data-aos-anchor-placement="center-bottom">Sign up for our
+                newsletter and we'll keep you updated on all our great deals on your favourite vaping
                 products.</p>
-              <form>
+              <form data-aos="fade-up" data-aos-delay="400" data-aos-anchor-placement="center-bottom">
                 <div class="form-group">
                   <input type="email" class="form-control" id="userEmail" placeholder="Email">
                 </div>
@@ -1076,6 +1050,9 @@
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="./js/main.js"></script>
   <script>
     // Vue.js Instance
@@ -1089,6 +1066,32 @@
           { id: 2, name: "nic salts", image: './assets/images/category-2.webp', stock: "8" },
           { id: 3, name: "vape kits", image: './assets/images/category-3.webp', stock: "26" },
           { id: 4, name: "pods", image: './assets/images/category-4.webp', stock: "53" }
+        ],
+        features: [
+          {
+            id: 1,
+            name: "Free Shipping",
+            icon: "fa-solid fa-truck-fast",
+            description: "You get your items delivered without any extra cost."
+          },
+          {
+            id: 2,
+            name: "Great Support 24/7",
+            icon: "fa-solid fa-microphone",
+            description: "Our customer support team is available around the clock."
+          },
+          {
+            id: 3,
+            name: "Return Available",
+            icon: "fa-regular fa-handshake",
+            description: "Making it easy to return any items if you're not satisfied."
+          },
+          {
+            id: 4,
+            name: "Secure Payment",
+            icon: "fa-solid fa-sack-dollar",
+            description: "Shop with confidence knowing that our secure payment."
+          }
         ]
       },
       created() {

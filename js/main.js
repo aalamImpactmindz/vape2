@@ -1,6 +1,14 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", () => {
+  // INITIALIZE AOS
+  AOS.init({
+    disable: window.innerWidth < 1199,
+    duration: 600,
+    once: false,
+  });
+  // INITIALIZE AOS
+
   // SWIPER CONTINUOUS
   const swiper = new Swiper(".swiper-continuous", {
     loop: true,
@@ -58,24 +66,24 @@ document.addEventListener("DOMContentLoaded", () => {
       // when window width is >= 320px
       320: {
         slidesPerView: 2,
-        spaceBetween: 20
+        spaceBetween: 20,
       },
       // when window width is >= 576px
       576: {
         slidesPerView: 3,
-        spaceBetween: 20
+        spaceBetween: 20,
       },
       // when window width is >= 992px
       992: {
         slidesPerView: 4,
-        spaceBetween: 20
+        spaceBetween: 20,
       },
       // when window width is >= 1200px
       1200: {
         slidesPerView: 6,
-        spaceBetween: 20
-      }
-    }
+        spaceBetween: 20,
+      },
+    },
   });
   // SWIPER BRANDS
 
@@ -96,24 +104,24 @@ document.addEventListener("DOMContentLoaded", () => {
       // when window width is >= 320px
       320: {
         slidesPerView: 1,
-        spaceBetween: false
+        spaceBetween: false,
       },
       // when window width is >= 576px
       576: {
         slidesPerView: 2,
-        spaceBetween: false
+        spaceBetween: false,
       },
       // when window width is >= 992px
       992: {
         slidesPerView: 3,
-        spaceBetween: false
+        spaceBetween: false,
       },
       // when window width is >= 2000px
       2000: {
         slidesPerView: 5,
-        spaceBetween: false
-      }
-    }
+        spaceBetween: false,
+      },
+    },
   });
   // SWIPER REVIEWS
 
@@ -149,39 +157,39 @@ document.addEventListener("DOMContentLoaded", () => {
       // when window width is >= 320px
       320: {
         slidesPerView: 1,
-        spaceBetween: 20
+        spaceBetween: 20,
       },
       // when window width is >= 576px
       576: {
         slidesPerView: 2,
-        spaceBetween: 20
+        spaceBetween: 20,
       },
       // when window width is >= 992px
       992: {
         slidesPerView: 3,
-        spaceBetween: 20
+        spaceBetween: 20,
       },
       // when window width is >= 1200px
       1200: {
         slidesPerView: 4,
-        spaceBetween: 20
-      }
-    }
+        spaceBetween: 20,
+      },
+    },
   });
   // SWIPER PRODUCTS
 
-  // SCROLL TO TOP 
+  // SCROLL TO TOP
   const scrollToTop = document.querySelector(".scroll-to-top");
   window.addEventListener("scroll", () => {
     if (window.scrollY > 1200) {
-      scrollToTop.classList.add("shown")
+      scrollToTop.classList.add("shown");
     } else {
-      scrollToTop.classList.remove("shown")
+      scrollToTop.classList.remove("shown");
     }
   });
   scrollToTop.addEventListener("click", () => {
-    window.scrollTo(0, 0)
-  })
+    window.scrollTo(0, 0);
+  });
   // SCROLL TO TOP
 
   // MOBILE NAV
@@ -191,10 +199,53 @@ document.addEventListener("DOMContentLoaded", () => {
   navOpener.addEventListener("click", () => {
     navMobile.classList.add("shown");
     document.body.classList.add("navbar-shown");
-  })
+  });
   navCloser.addEventListener("click", () => {
     navMobile.classList.remove("shown");
     document.body.classList.remove("navbar-shown");
-  })
+  });
   // MOBILE NAV
+
+  // SWIPER PRODUCT GALLERY
+  const swiperProductThumbnails = new Swiper(".swiper-product-thumbnails", {
+    spaceBetween: 10,
+    slidesPerView: 5.5,
+    freeMode: true,
+    watchSlidesProgress: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+  const swiperProductGallery = new Swiper(".swiper-product-gallery", {
+    spaceBetween: false,
+    thumbs: {
+      swiper: swiperProductThumbnails,
+    },
+  });
+  // SWIPER PRODUCT GALLERY
+
+  // ELEVATE ZOOM
+  $(".zoom-image").ezPlus({
+    zoomType: "inner",
+    cursor: "crosshair",
+    easing: "ease-out",
+  });
+  // ELEVATE ZOOM
+
+  // QUANTITY NUMBER SPINNER
+  const btnDecreaseQuantity = document.querySelector(".btn-decrease-quantity");
+  const btnIncreaseQuantity = document.querySelector(".btn-increase-quantity");
+  const inputQunatity = document.querySelector(
+    ".quantity-number-spinner input"
+  );
+  btnDecreaseQuantity.addEventListener("click", () => {
+    if (inputQunatity.value > 1) {
+      inputQunatity.value--;
+    }
+  });
+  btnIncreaseQuantity.addEventListener("click", () => {
+    inputQunatity.value++;
+  });
+  // QUANTITY NUMBER SPINNER
 });
